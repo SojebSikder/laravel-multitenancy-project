@@ -38,7 +38,7 @@ Route::get('/invitation/{user}', [App\Http\Controllers\TenantController::class, 
 
 Route::get('/password', [App\Http\Controllers\Auth\PasswordController::class, 'create'])->name('password.create');
 
-Route::post('/password', 'Auth\PasswordController@store')->name('password.store');
+Route::post('/password', [App\Http\Controllers\Auth\PasswordController::class, 'store'])->name('password.store');
 
 // Route::group(['as' => 'admin.', 'namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth']], function () {
 Route::group(['as' => 'admin.',  'prefix' => 'admin', 'middleware' => ['auth']], function () {
